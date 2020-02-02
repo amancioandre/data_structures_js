@@ -1,17 +1,17 @@
 const { SLL } = require("../Linked_Lists");
 
-class Stack extends SLL {
+class Queue extends SLL {
   constructor(value) {
     super(value);
   }
 
-  push(value) {
-    return super.unshift(value);
+  enqueue(value) {
+    return super.push(value);
   }
 
-  pop() {
+  dequeue() {
     return super.shift();
   }
 }
 
-module.exports = Stack;
+module.exports = Queue;
