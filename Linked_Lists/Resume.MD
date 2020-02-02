@@ -1,4 +1,4 @@
-# Single Linked Lists Resume
+# Linked Lists Resume
 
 ## Comparison with Arrays
 

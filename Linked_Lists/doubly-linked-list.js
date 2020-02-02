@@ -168,6 +168,26 @@ class DoublyLinkedList {
     return true;
   }
 
+  reverse() {
+    if (!this.head) return;
+
+    let currentNode = this.head;
+    this.head = this.tail;
+    this.tail = currentNode;
+
+    while (currentNode) {
+      let nextNode = currentNode.next;
+      let previousNode = currentNode.previous;
+
+      currentNode.previous = nextNode;
+      currentNode.next = previousNode;
+
+      currentNode = nextNode;
+    }
+
+    return this;
+  }
+
   print() {
     const arr = [];
 
@@ -181,23 +201,4 @@ class DoublyLinkedList {
   }
 }
 
-const list = new DoublyLinkedList();
-console.log(list.push(0));
-console.log(list.push(1));
-console.log(list.push(2));
-
-// console.log(list.pop());
-// console.log(list);
-
-console.log(list.unshift(-1));
-console.log(list.unshift(-2));
-
-console.log(list.get(2));
-
-console.log(list.print());
-
-console.log(list.remove(-9));
-
-console.log(list.print());
-
-// console.log(list);
+module.exports = DoublyLinkedList;

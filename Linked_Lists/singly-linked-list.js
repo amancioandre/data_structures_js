@@ -1,4 +1,11 @@
-const Node = require("../Utils/node");
+const BaseNode = require("../Utils/node");
+
+class Node extends BaseNode {
+  constructor(value) {
+    super(value);
+    this.next = null;
+  }
+}
 
 class SinglyLinkedList {
   constructor() {
@@ -171,15 +178,4 @@ class SinglyLinkedList {
   }
 }
 
-const list = new SinglyLinkedList();
-
-list.push(0);
-list.push(1);
-list.push(2);
-
-list.unshift(-1);
-list.unshift(-2);
-
-console.log(list.print());
-console.log(list.reverse());
-console.log(list.print());
+module.exports = SinglyLinkedList;
